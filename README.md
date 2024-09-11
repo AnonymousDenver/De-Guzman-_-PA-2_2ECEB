@@ -22,6 +22,26 @@ Example Output of normalized array : array([[-1.31176812, -0.3536442 , -0.672143
                                            [-0.93258431,  0.31691698,  0.51323234, -1.05712331,  1.49432218]])
 
 
+ # codes
+
+
+import numpy as np  #To access numpy liblary 
+# Step 1: Create a random 5x5 ndarray
+X = np.random.random((5, 5))
+
+# Step 2: Calculate the mean and standard deviation of X
+mean_X = X.mean()
+std_X = X.std()
+
+# Step 3: Normalize the array
+X_normalized = (X - mean_X) / std_X
+
+# Step 4: Save the normalized array to a file
+np.save('X_normalized.npy', X_normalized)
+
+
+
+
 
 # 2) DIVISIBLE BY 3 PROBLEM
 
@@ -33,3 +53,29 @@ Lastly , using the ''divisible_by_3'' it will find the numbers that is divisible
 Output : array([  9,   36,   81,  144,  225,  324,  441,  576,  729,  900, 1089,
                  1296, 1521, 1764, 2025, 2304, 2601, 2916, 3249, 3600, 3969, 4356,
                  4761, 5184, 5625, 6084, 6561, 7056, 7569, 8100, 8649, 9216, 9801])
+
+
+
+# codes
+
+import numpy as np # Use to access and create numpy files
+
+# Step 1: Create an array of the first 100 positive integers
+integers = np.arange(1, 101)
+
+# Step 2: Square each element in the array and storing in a variable
+squares = integers**2
+
+# Step 3: Reshaping the 9x9 into a 10x10 matrix and store to variable "A"
+A = squares.reshape(10, 10)
+
+# Step 4: Identify elements divisible by 3
+divisible_by_3 = A[A % 3 == 0]
+
+# Step 5: Save the result to a file
+np.save('div_by_3.npy', divisible_by_3)
+
+
+
+
+
